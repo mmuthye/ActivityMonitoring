@@ -7,7 +7,7 @@ output:
 
 
 ## Loading and preprocessing the data
-```{r FileManagement, echo=TRUE}
+```{r FileManagement, echo=TRUE, cache=TRUE}
 
 library(knitr)
 
@@ -19,17 +19,20 @@ DatasetFile <- "activity.csv"
 if (!file.exists(DatasetFile)) {
         download.file(DatasetURL, DatasetZip)
         unzip(DatasetZip)
-} 
+}
 
 activity_data <- read.csv(DatasetFile)
-dim(activity_data)
-print(head(activity_data), type="html")
+
 ```
 
 
 ## What is mean total number of steps taken per day?
+```{r MeanValue, echo=TRUE, cache=TRUE}
 
+MeanValue <- mean(activity_data$steps, na.rm=TRUE)
 
+```
+The answer is: `r MeanValue`
 
 ## What is the average daily activity pattern?
 
