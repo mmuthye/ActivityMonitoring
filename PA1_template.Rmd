@@ -38,9 +38,9 @@ daily_total <- tapply(activity_data$steps, activity_data$date, sum, na.rm=TRUE)
 hist(daily_total, main = "Steps per day", col = "gray")
 
 #3. Calculate and report the mean and median of the total number of steps taken per day
-
 MeanValue <- mean(daily_total)
 MedianValue <- median(daily_total)
+
 ```
 The answer is - Mean: `r MeanValue` & median: `r MedianValue` steps.
 
@@ -63,6 +63,7 @@ It is the **`r int`th** interval, which contains the maximum number of steps.
 
 ## Imputing missing values
 ```{r MisingValues, echo=TRUE, cache=TRUE}
+
 #1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 missing_values <- sum(is.na(activity_data$steps))
 
@@ -138,8 +139,8 @@ New Mean of steps per day is: `r new_MeanValue` & median: `r new_MedianValue` st
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-
 ```{r ActivityPatterns, echo=TRUE, cache=TRUE}
+
 #1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
 new_activity_data$day_type <- ifelse(as.POSIXlt(as.Date(new_activity_data$date))$wday%%6==0, "weekend", "weekday")

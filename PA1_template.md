@@ -41,7 +41,6 @@ hist(daily_total, main = "Steps per day", col = "gray")
 
 ```r
 #3. Calculate and report the mean and median of the total number of steps taken per day
-
 MeanValue <- mean(daily_total)
 MedianValue <- median(daily_total)
 ```
@@ -158,7 +157,6 @@ New Mean of steps per day is: 1.0751738\times 10^{4} & median: 1.0656\times 10^{
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-
 
 ```r
 #1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
